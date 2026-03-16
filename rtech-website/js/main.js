@@ -131,10 +131,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const typingEl = document.querySelector('.typing-text');
   if (typingEl) {
     const phrases = [
-      'Financial Freedom.',
-      'Strategic Growth.',
-      'Lasting Legacy.',
-      'True Partnership.',
+      'Lead with a Vision.',
+      'Build with Confidence.',
+      'Multiply always.'
     ];
     let phIdx = 0, charIdx = 0, deleting = false;
     function typeLoop() {
