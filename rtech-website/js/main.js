@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const phrases = [
       'Lead with a Vision.',
       'Build with Confidence.',
-      'Multiply always.'
+      'Multiply Always.'
     ];
     let phIdx = 0, charIdx = 0, deleting = false;
     function typeLoop() {
