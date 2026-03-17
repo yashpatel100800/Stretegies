@@ -14,6 +14,39 @@
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
   <style>
+    /* ─── VIDEO HERO BACKGROUND ─────────────────────────────── */
+    .hero-video-wrap {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .hero-video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Multi-layer dark cinematic overlay — darkened for text readability */
+    .hero-video-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg,
+          rgba(10, 10, 18, 0.72) 0%,
+          rgba(10, 10, 18, 0.50) 40%,
+          rgba(10, 10, 18, 0.88) 100%
+        ),
+        linear-gradient(90deg,
+          rgba(224, 112, 51, 0.10) 0%,
+          transparent 60%
+        );
+      z-index: 1;
+    }
+
     /* ─── CTA Button entrance animation ─────────────────────── */
     .hero-cta {
       opacity: 1;
@@ -363,8 +396,16 @@
 
   <!-- ═══ HERO ═══ -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <!-- Looping video background -->
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="images/bg.mp4" type="video/mp4">
+      </video>
+      <div class="hero-video-overlay"></div>
+    </div>
+
     <div class="hero-particles"></div>
+
     <div class="hero-content">
       <div class="hero-eyebrow">Axis Alliance</div>
       <h1 class="hero-title">
@@ -372,13 +413,12 @@
         <span class="highlight typing-text">Lead with a Vision.</span>
       </h1>
       <p class="hero-subtitle">
-        Our mission is to revolutionize the path to financial independence by equipping individuals with the
-        foundational knowledge to build wealth in the correct order and the professional infrastructure to launch their
-        own business. We bridge the gap between financial literacy and entrepreneurship, providing a clear roadmap for
-        personal prosperity and a scalable platform for those driven to lead in the financial industry.
+        We revolutionize the path to financial independence — equipping individuals with the knowledge to
+        build wealth in the correct order and the infrastructure to launch their own business.
+        Bridging financial literacy and entrepreneurship for those driven to lead.
       </p>
       <div class="hero-cta">
-        <button class="btn btn-primary cta-btn" id="openModalBtn">Schedule a Consultation</button>
+        <button class="btn btn-primary cta-btn" id="openModalBtn">Schedule a Consultation &rarr;</button>
       </div>
     </div>
   </section>

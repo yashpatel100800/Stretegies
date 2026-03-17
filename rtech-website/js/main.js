@@ -38,15 +38,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ── Hero parallax ────────────────────────────────────────
-  const heroBg = document.querySelector('.hero-bg');
-  if (heroBg) {
+  // ── Hero video autoplay & subtle parallax ────────────────────
+  const heroVideo = document.querySelector('.hero-video-wrap video');
+  if (heroVideo) {
+    // Ensure autoplay on all browsers (esp. Safari iOS)
+    heroVideo.muted = true;
+    heroVideo.playbackRate = 0.7; // Slow-motion cinematic effect
+    heroVideo.play().catch(() => {
+      // If autoplay blocked, play on first interaction
+      document.addEventListener('touchstart', () => { heroVideo.play(); heroVideo.playbackRate = 0.5; }, { once: true });
+      document.addEventListener('click', () => { heroVideo.play(); heroVideo.playbackRate = 0.5; }, { once: true });
+    });
+
+    // Subtle parallax: shift video slightly on scroll
     window.addEventListener('scroll', () => {
-      const offset = window.scrollY * 0.4;
-      heroBg.style.transform = `scale(1.05) translateY(${offset}px)`;
+      const offset = window.scrollY * 0.25;
+      heroVideo.style.transform = `scale(1.06) translateY(${offset}px)`;
     }, { passive: true });
-    // Trigger entrance zoom
-    setTimeout(() => { heroBg.style.transform = 'scale(1) translateY(0)'; }, 100);
   }
 
   // ── Floating particles ───────────────────────────────────
