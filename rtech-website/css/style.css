@@ -63,7 +63,7 @@ ul { list-style: none; }
   height: var(--nav-height);
   display: flex;
   align-items: center;
-  padding: 0 5%;
+  padding: 0 1%;
   transition: background var(--transition), backdrop-filter var(--transition), box-shadow var(--transition);
 }
 

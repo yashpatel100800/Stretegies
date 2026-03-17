@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (heroVideo) {
     // Ensure autoplay on all browsers (esp. Safari iOS)
     heroVideo.muted = true;
-    heroVideo.playbackRate = 0.7; // Slow-motion cinematic effect
+    heroVideo.playbackRate = 1; // Slow-motion cinematic effect
     heroVideo.play().catch(() => {
       // If autoplay blocked, play on first interaction
       document.addEventListener('touchstart', () => { heroVideo.play(); heroVideo.playbackRate = 0.5; }, { once: true });
